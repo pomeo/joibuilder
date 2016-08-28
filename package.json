@@ -1,7 +1,7 @@
 {
   "name": "joibuilder",
   "version": "1.0.0",
-  "description": "Create Joi schema",
+  "description": "Node.js module to parse a yaml input file into a joi schema",
   "main": "index.js",
   "scripts": {
     "docs": "./node_modules/.bin/esdoc -c esdoc.json",
