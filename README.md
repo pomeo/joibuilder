@@ -20,7 +20,7 @@ import joibuilder from 'joibuilder';
 
 // Get things done
 const fromYamlSchema = joibuilder.build('test/file.yml');
-// or you can transmit a object
+// or you can transmit an object
 import yamlParser from 'yamljs';
 const json = yamlParser.load('test/file.yml').columns;
 const fromYamlSchema = joibuilder.build(json);
