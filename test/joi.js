@@ -1,8 +1,7 @@
-import should     from 'should';
 import assert     from 'assert';
-import joibuilder from '../lib/';
 import yamlParser from 'yamljs';
 import Joi        from 'joi';
+import joibuilder from '../lib/';
 
 const formalSchema = Joi.object().keys({
   id: Joi.number().integer().required(),
@@ -12,7 +11,7 @@ const formalSchema = Joi.object().keys({
   stats: Joi.object({
     downloads: Joi.number().integer(),
     cleanses: Joi.number().integer(),
-    imports: Joi.number().integer(),
+    imports: Joi.number().integer()
   }),
   meta: Joi.any(),
   schema: Joi.object().optional()
