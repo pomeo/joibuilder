@@ -1,0 +1,60 @@
+{
+  "name": "joibuilder",
+  "version": "1.0.0",
+  "description": "Create Joi schema",
+  "main": "index.js",
+  "scripts": {
+    "docs": "./node_modules/.bin/esdoc -c esdoc.json",
+    "test": "xo && make test-once",
+    "compile": "babel --presets es2015 -d dist/ ./lib",
+    "prepublish": "sed -i 's@ \"index.js\"@ \"dist/index.js\"@' package.json && npm run compile",
+    "postpublish": "sed -i 's@ \"dist/index.js\"@ \"index.js\"@' package.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pomeo/joibuilder.git"
+  },
+  "keywords": [
+    "joi"
+  ],
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "files": [
+    "dist"
+  ],
+  "author": "Sergey Ovechkin <me@pomeo.me>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pomeo/joibuilder/issues"
+  },
+  "homepage": "https://github.com/pomeo/joibuilder#readme",
+  "dependencies": {
+    "joi": "^9.0.4",
+    "yamljs": "^0.2.8"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.14.0",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-register": "^6.14.0",
+    "coveralls": "^2.11.12",
+    "esdoc": "^0.4.8",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.0.2",
+    "should": "^11.1.0",
+    "xo": "^0.16.0"
+  },
+  "xo": {
+    "esnext": true,
+    "space": true,
+    "rules": {
+      "space-before-function-paren": 0,
+      "curly": 0
+    },
+    "envs": [
+      "node",
+      "mocha"
+    ]
+  }
+}
