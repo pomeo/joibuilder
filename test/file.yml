@@ -1,0 +1,31 @@
+columns:
+  id:
+    db: serial
+    joi: 'number().integer().required()'
+  name:
+    db: text
+    joi: 'string().min(1).max(80).trim()'
+  email:
+    db: text
+    joi: 'string().email()'
+  user_id:
+    db: array
+    joi: 'array()'
+  stats:
+    db: jsonb
+    joi:
+      downloads:
+        joi: 'number().integer()'
+      cleanses:
+        joi: 'number().integer()'
+      imports:
+        joi: 'number().integer()'
+  meta:
+    db: text
+    joi: 'any()'
+  schema:
+    db: jsonb
+    joi: 'object().optional()'
+  contact:
+     # this is skipped as there is no joi key
+    db: jsonb
