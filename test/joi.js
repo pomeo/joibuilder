@@ -1,7 +1,7 @@
-import assert     from 'assert';
-import yamlParser from 'yamljs';
-import Joi        from 'joi';
-import joibuilder from '../lib/';
+const assert     = require('assert');
+const yamlParser = require('yamljs');
+const Joi        = require('joi');
+const joibuilder = require('../lib/');
 
 const formalSchema = Joi.object().keys({
   id: Joi.number().integer().required(),

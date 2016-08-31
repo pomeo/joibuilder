@@ -2,13 +2,10 @@
   "name": "joibuilder",
   "version": "1.0.0",
   "description": "Node.js module to parse a yaml input file into a joi schema",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "docs": "./node_modules/.bin/esdoc -c esdoc.json",
-    "test": "xo && make test-once",
-    "compile": "babel --presets es2015 -d dist/ ./lib",
-    "prepublish": "sed -i 's@ \"index.js\"@ \"dist/index.js\"@' package.json && npm run compile",
-    "postpublish": "sed -i 's@ \"dist/index.js\"@ \"index.js\"@' package.json"
+    "test": "xo && make test-once"
   },
   "repository": {
     "type": "git",
@@ -22,7 +19,7 @@
     "test": "test"
   },
   "files": [
-    "dist"
+    "lib"
   ],
   "author": "Sergey Ovechkin <me@pomeo.me>",
   "license": "MIT",
@@ -35,13 +32,8 @@
     "yamljs": "^0.2.8"
   },
   "devDependencies": {
-    "babel-cli": "^6.14.0",
-    "babel-preset-es2015": "^6.14.0",
-    "babel-register": "^6.14.0",
     "esdoc": "^0.4.8",
-    "istanbul": "^0.4.5",
     "mocha": "^3.0.2",
-    "rimraf": "^2.5.4",
     "xo": "^0.16.0"
   },
   "xo": {
