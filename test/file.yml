@@ -20,6 +20,10 @@ columns:
         joi: 'number().integer()'
       imports:
         joi: 'number().integer()'
+  array:
+    joi: "string().valid(['active', 'inactive', 'deleted'])"
+  regex:
+    joi: "string().regex(/^[a-zA-Z0-9]{3,30}$/)"
   meta:
     db: text
     joi: 'any()'

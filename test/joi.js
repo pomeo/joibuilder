@@ -13,6 +13,8 @@ const formalSchema = Joi.object().keys({
     cleanses: Joi.number().integer(),
     imports: Joi.number().integer()
   }),
+  array: Joi.string().valid(['active', 'inactive', 'deleted']),
+  regex: Joi.string().regex(/^[a-zA-Z0-9]{3,30}$/),
   meta: Joi.any(),
   schema: Joi.object().optional()
 });
